@@ -28,22 +28,29 @@ def savePointCloud(i, pipe, colorizer):
     colorized = colorizer.process(frames)
 
     # Create save_to_ply object
-    ply = rs.save_to_ply("oblaki\PC_" + str(i) + ".ply")
+    ply = rs.save_to_ply("realsense\oblaki_blizu\PC_" + str(i) + ".ply")
 
     # Set options to the desired values
     # In this example we'll generate a textual PLY with normals (mesh is already created by default)
-    ply.set_option(rs.save_to_ply.option_ply_binary, False)
+    ply.set_option(rs.save_to_ply.option_ply_binary, True)
     ply.set_option(rs.save_to_ply.option_ply_normals, True)
 
     # Apply the processing block to the frameset which contains the depth frame and the texture
     ply.process(colorized)
 
+    print(123)
+
     color_image = np.asanyarray(frames.get_color_frame().get_data())
+    
+    print(123)
     im = Image.fromarray(color_image)
-    im.save("slike\pic_" + str(i) + ".jpeg")
+    
+    print(123)
+    im.save("realsense\slike_blizu\pic_" + str(i) + ".jpeg")
+    print(123)
 
 try:
-    i = 1
+    i = 7
     while True:
 
         # Wait for a coherent pair of frames: depth and color
