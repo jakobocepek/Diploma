@@ -1,0 +1,12 @@
+nidaqmx
+imagezmq
+paramiko
+numpy
+matplotlib
+scipy
+nidaqmx
+pyExSi
+pyFRF
+pyEMA
+opencv-python
+pyrealsense2
