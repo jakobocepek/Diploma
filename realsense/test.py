@@ -38,19 +38,14 @@ def savePointCloud(i, pipe, colorizer):
     # Apply the processing block to the frameset which contains the depth frame and the texture
     ply.process(colorized)
 
-    print(123)
-
     color_image = np.asanyarray(frames.get_color_frame().get_data())
     
-    print(123)
     im = Image.fromarray(color_image)
     
-    print(123)
     im.save("realsense\slike_blizu\pic_" + str(i) + ".jpeg")
-    print(123)
 
 try:
-    i = 7
+    i = 1
     while True:
 
         # Wait for a coherent pair of frames: depth and color
